@@ -1,0 +1,124 @@
+/*
+    SingleStore New Grad Hiring Challenge
+    Michael Schroeder
+    3/24/2022
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+:root {
+  --green: #ffffff;
+  --white: #ffffff;
+  --black: #000000;
+}
+* {
+  color: var(--fontColor);
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+body {
+  background-color: #f9fafb;
+  font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    font-family: helvetica;  
+}
+
+li {
+    list-style: circle;
+}
+
+.list {
+    list-style: square;
+}
+
+.btn {
+  position: absolute;
+  top: 20px;
+  left: 250px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  color: var(--btnFontColor);
+  background-color: var(--btnBg);
+}
+
+btn:focus { outline-style: none; }
+
+input[type=text] {
+  padding: 0;
+  height: 22.5px;
+  width: 250px;
+  position: relative;
+  left: 0;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0, 0, 0, .15);
+  background-color: white;
+  font-size: 16px;
+}
+
+.advancedSearchTextbox {
+  width: 526px;
+  margin-right: -4px;
+}
+
+.light-theme {
+  --bg: var(--green);
+  --fontColor: var(--black);
+  --btnBg: var(--black);
+  --btnFontColor: var(--white);
+}
+
+.dark-theme {
+  background-color: rgb(26, 26, 26);
+  --fontColor: var(--green);
+  --btnBg: var(--white);
+  --btnFontColor: var(--black);
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgb(29, 28, 28);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+/* .topnav a:hover {
+  background-color: #ddd;
+  color: black;
+} */
+
+/* Add a color to the active/current link */
+/* .topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+} */
+
+/* *
+{
+text-align: center !important;
+margin: auto !important;
+bottom: 100px;
+} */
+
+.logo-image img{
+  width: 130px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+  }
+  

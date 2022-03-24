@@ -1,0 +1,68 @@
+<!-- 
+    SingleStore New Grad Hiring Challenge
+    Michael Schroeder
+    3/24/2022
+--->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a demo</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<header>
+  <div class="topnav">
+    <a class="active" href="#home">
+      <div class="logo-image">
+        <img src="/Users/michaelschroeder/Documents/code/take_home_js/src/assets/singlestore_logo_horizontal_color_on-black_cmyk.png" class="img-fluid">
+  </div>
+</a>
+  </div> 
+  </header>
+
+  <body>
+  <body class="light-theme"></body>
+    <h1>Book a Demo</h1>
+    <h4>Help us customize your demo by answering the following questions below:</h4>
+    <ul>
+      <form>
+        <label for="email">Business Email</label><br>
+        <input type="text" class="advancedSearchTextBox" name="businessEmail"
+        placeholder="Enter your business email" required><br>
+
+      <body onload='document.form1.text1.focus()'></body>
+      <form action=""><br>
+        <label for="size">Business size:</label><br>
+        <select name="size" id="size">
+          <option value="" disabled selected>Select Size</option>
+          <option value="1-10">1-10</option>
+          <option value="11-15">11-15</option>
+          <option value="51-100">51-100</option>
+          <option value="250-1000">250-1000</option>
+          <option value="1000+">1000+</option>
+        </select>
+        <br><br>
+        <h4>What is the most important thing to you in a solution?</h4>
+        <input type="radio" name="analytics" /> Real-time Analytics<br />
+        <input type="radio" name="time" /> Query Response Time<br />
+        <input type="radio" name="concurrency" /> High Concurrency<br />
+        <input type="radio" name="Ingest" /> Fast Data Ingest<br />
+        <input type="radio" name="scalability" /> Scalability<br />
+        <input type="radio" name="storage" /> Document Storage<br />
+        <input type="radio" name="search" /> Full Text Search<br />
+        <input type="radio" name="price" /> Price<br />
+        <li class="submit"><input type="submit" name="submit" value ="Continue to Schedule a Time ->" 
+          onclick="ValidateEmail(document.form1.text1)"/></li>
+        </form> 
+    </ul>
+    <div>
+      <button class="btn">Dark</button>
+    </div>
+    <script src="app.js"></script>
+    <noscript>You need to enable Javascript to view the full site.</noscript>
+</body>
+</html>
