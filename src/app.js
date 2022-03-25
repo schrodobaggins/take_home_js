@@ -1,64 +1,58 @@
 //   SingleStore New Grad Hiring Challenge
 //   Michael Schroeder
 //   3/24/2022
-
 'use strict'
 
-const switcher = document.querySelector('.btn');
-const radio = document.querySelector('.radio');
+const form = document.querySelector("#form");
+const emailInput = document.querySelector(".emailInput");
+const emailSubEl = document.querySelector(".emailSub");
 
-// light mode / dark mode theme
-switcher.addEventListener('click', function() {
-    document.body.classList.toggle('dark-theme')
-
-    let className = document.body.className;
-    if(className == "light-theme") {
-        this.textContent = "Dark";
+if(form){
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const checked = document.querySelector('input[value="1"]:checked');
+    if (checked) {
+        const value = checked.value;
+        window.location.pathname = "unqualified.html";
+        // redirect using the value
+        return window.location.pathname = "unqualified.html";;
     }
-    else {
-        this.textContent = "Light";
-    }
-
 });
-
-// event handler for scheduling a time button
-radio.addEventListener('click', function() {
-    document.body.classList.toggle('/unqualified.html')
-
-    let className = document.body.className;
-    if(className == "1-10") {
-        this.textContent = "Dark";
-    }
-    else {
-        this.textContent = "Light";
-    }
-
-});
-
-// form validation for an empty form
-function validateForm() {
-    let x = document.forms["email"]["businessEmail"].value;
-    if (x == "") {
-      alert("Business email must be entered");
-      return false;
-    }
 }
 
-// form validation for proper email format using js regex and indexOf()
-function ValidateEmail(inputText) {
+// form validation for proper email format using js regex
+function validateEmail(inputText) {
     let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    let index = mailFormat.indexOf('@yahoo.com','@gmail.com','@hotmail.com');
-    if(inputText.value.match(mailFormat))
-    {
-        alert("Valid email address!");
-        document.form1.text1.focus();
-        return true;
-    } else {
-        if (index > -1) {
-            alert("Please make sure this isn't a personal email address");
-          }
-        alert("You have entered an invalid email address!");
-        document.form1.text1.focus();
-        return false;
+   
+    if(inputText.match(mailFormat)){
+       const bannedEmails  = ['@yahoo.com','@gmail.com','@hotmail.com'];
+       const doesHaveBannedEmail = bannedEmails.some((nonWorkEmail) => inputText.includes(nonWorkEmail));
+
+       if (doesHaveBannedEmail) {
+        return {error: true, msg: "Please make sure this isn't a personal email"}
+       }
+        return {error: false, msg:"" };
+    } else { 
+        return {error: true, msg: "Invalid Email"}
     }
 }
+
+// event listener for determining the outline for valid or invalid email entry
+emailInput.addEventListener("change", (ev) => {
+
+    const value = ev.target.value;
+   
+
+    if (value && value.length > 0) {
+
+        const err = validateEmail(value);
+        let outlineColor = "green";
+
+        if (err.error) {
+            outlineColor = "red"
+        } 
+        emailInput.style.outline = `1px ${outlineColor} solid`;
+        emailSubEl.innerHTML = err.msg;
+    }
+
+});
